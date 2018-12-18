@@ -25,11 +25,14 @@ function getJSON() {
             const json = JSON.parse( body );
             if ( json.date ) {
                 earth.imgs = [];
-                earth.date = json.date.replace( /[- ]/ig, '/' ).replace( /:/ig, '' );
-                const img  = EARTH_IMG.replace( '<date>', earth.date );
+                const date = json.date.replace( /[- ]/ig, '/' ).replace( /:/ig, '' ),
+                      img  = EARTH_IMG.replace( '<date>', date );
                 EARTH_SUFFIX.forEach( item => earth.imgs.push( img.replace( '<suffix>', item )));
-                console.log( "=== Himawari8 latest background is ", earth )
-                saveImage();
+                if ( earth.date != date ) {
+                    earth.date = date;
+                    saveImage();
+                    console.log( "=== Himawari8 latest background is ", earth )
+                }
             }
         } else {
           console.log( 'Got an error: ', error, ', status code: ', response.statusCode )

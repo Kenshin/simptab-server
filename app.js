@@ -14,10 +14,10 @@ app.use( expressSession({
     saveUnititialized: true
 }));
 
-/*
-app.use( '/view', express.static(__dirname + '/readmode/view' ));
+app.use( '/earth', express.static(__dirname + '/earth' ));
 app.use( cors() );
 
+/*
 app.post( '/evernote/oauth', en.oauth );
 app.post( '/evernote/token', en.token );
 app.post( '/evernote/add',   en.add   );

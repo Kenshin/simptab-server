@@ -15,8 +15,10 @@ app.use( expressSession({
     saveUnititialized: true
 }));
 
-app.use( '/earth', express.static(__dirname + '/images' ));
+app.use( '/earth', express.static(__dirname + '/earth/images' ));
 app.use( cors() );
+
+app.post( '/earth/get', earth.get );
 
 earth.task();
 

@@ -1,0 +1,27 @@
+{
+  "name": "simptab_project_server",
+  "description": "simptab server",
+  "version": "1.0.0",
+  "author": "Kenshin Wang <kenshin@ksria.com>",
+  "license": "MIT",
+  "homepage": "http://ksria.com/simptab",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kenshin/simptab.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kenshin/simptab/issues",
+    "email": "kenshin@ksria.com"
+  },
+  "scripts": {
+    "start": "node app"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cors": "^2.8.4",
+    "express": "^4.14.0",
+    "express-session": "^1.14.1",
+    "node-schedule": "^1.2.4",
+    "request": "^2.85.0"
+  }
+}

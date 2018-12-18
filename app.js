@@ -3,6 +3,7 @@ var bodyParser     = require( 'body-parser' ),
     express        = require( 'express'     ),
     expressSession = require( 'express-session' ),
     cors           = require( 'cors' ),
+    earth          = require( './earth' ),
     app            = express();
 
 app.use( bodyParser({limit: '5mb'}));
@@ -14,19 +15,10 @@ app.use( expressSession({
     saveUnititialized: true
 }));
 
-app.use( '/earth', express.static(__dirname + '/earth' ));
+app.use( '/earth', express.static(__dirname + '/images' ));
 app.use( cors() );
 
-/*
-app.post( '/evernote/oauth', en.oauth );
-app.post( '/evernote/token', en.token );
-app.post( '/evernote/add',   en.add   );
-
-app.post( '/view/read',      rd.read  );
-app.post( '/view/clear',     rd.clear );
-
-app.post( '/service/add',    srv.add  );
-*/
+earth.task();
 
 app.get( '*', function ( req, res ) {
     res.redirect( "http://ksria.com/simptab" );

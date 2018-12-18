@@ -13,7 +13,7 @@ const fs           = require( 'fs' ),
 
 function task() {
     getJSON();
-    schedule.scheduleJob( '3 * * * * *', () => {
+    schedule.scheduleJob( '30 1 * * * *', () => {
         console.log('=== Start get json and download image process:' + new Date());
         getJSON();
     });

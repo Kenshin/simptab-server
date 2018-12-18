@@ -58,8 +58,4 @@ function saveImage() {
     download( earth.imgs[count], EARTH_SUFFIX[count] + ".png", complete );
 }
 
-exports.get = function( req, res ) {
-    res.send({ code: 200, date: earth.date });
-}
-
 exports.task = task;

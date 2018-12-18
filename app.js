@@ -18,15 +18,11 @@ app.use( expressSession({
 app.use( '/earth', express.static(__dirname + '/earth/images' ));
 app.use( cors() );
 
-app.post( '/earth/get', earth.get );
-
 earth.task();
 
-/*
 app.get( '*', function ( req, res ) {
     res.redirect( "http://ksria.com/simptab" );
 });
-*/
 
 app.listen( process.env.PORT || 3000 , function() {
     console.log( 'SimpRead server started and listening on port 3000' );

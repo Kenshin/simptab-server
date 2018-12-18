@@ -20,9 +20,11 @@ app.use( cors() );
 
 earth.task();
 
+/*
 app.get( '*', function ( req, res ) {
     res.redirect( "http://ksria.com/simptab" );
 });
+*/
 
 app.listen( process.env.PORT || 3000 , function() {
     console.log( 'SimpRead server started and listening on port 3000' );

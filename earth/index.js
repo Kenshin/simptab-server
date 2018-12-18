@@ -5,11 +5,11 @@ const fs           = require( 'fs' ),
       EARTH_JSON   = 'http://himawari8.nict.go.jp/img/D531106/latest.json',
       EARTH_IMG    = 'http://himawari8-dl.nict.go.jp/himawari8/img/D531106/2d/550/<date>_<suffix>.png',
       EARTH_SUFFIX = [ '0_0', '0_1', '1_0', '1_1' ],
+      EARTH_FOLDER = __dirname + '/images/',
       earth        = {
           date: "",
           imgs: []
-      },
-      earth_folder = __dirname + '/images/';
+      };
 
 function task() {
     getJSON();
@@ -41,7 +41,7 @@ function saveImage() {
     let count = 0;
     const download = ( url, filename, callback ) => {
             request.head( url, ( err, res, body ) => {
-                request( url ).pipe( fs.createWriteStream( earth_folder + filename )).on( 'close', callback );
+                request( url ).pipe( fs.createWriteStream( EARTH_FOLDER + filename )).on( 'close', callback );
             });
         },
         complete = () => {
